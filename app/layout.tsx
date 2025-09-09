@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Nunito, Roboto } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "My App",
-  description: "Template for Next.js 15 with Tailwind v4 and Shadcn UI",
+  title: "Home - PT Adonia Footwear Indonesia",
+  description: "PT Adonia Footwear Indonesia Home Page",
 };
 
 export default function RootLayout({
@@ -20,7 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} antialiased`}>{children}</body>
+      <body className={`${roboto.variable} ${nunito.variable} antialiased`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

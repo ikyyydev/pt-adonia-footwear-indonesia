@@ -3,6 +3,9 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import { navlinks } from "@/common/constants";
+import Image from "next/image";
+
+import Logo from "@/public/img/Logo.png";
 
 const MobileNav = () => {
   return (
@@ -15,7 +18,7 @@ const MobileNav = () => {
           {/* Logo */}
           <div className="mt-20 mb-10 text-center text-2xl flex justify-center">
             <Link href={"/"}>
-              <h1>Logo</h1>
+              <Image src={Logo} alt="logo" className="w-12" />
             </Link>
           </div>
           {/* Nav Menu */}
